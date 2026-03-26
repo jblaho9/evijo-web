@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pizzeria EVIJO – Sásová, Banská Bystrica</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>.glf-btn-widget,#glf-btn-widget,[class*="glf-btn"],[id*="glf-btn"]{display:none!important}</style>
+</head>
+<body>
+
+  <!-- ITALIAN TRICOLORE TOP -->
+  <div class="tricolore tricolore--top" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#home" class="nav__logo">
+        <img src="../evijo/logo2.png" alt="Evijo Sásová" class="nav__logo-img" />
+      </a>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#delivery">Donáška</a></li>
+        <li><a href="#menu">Pizzeria</a></li>
+        <li><a href="#daily">Denné menu</a></li>
+        <li><a href="#about">O nás</a></li>
+        <li><a href="#contact">Kontakt</a></li>
+        <li>
+          <a href="javascript:void(0)" class="btn btn--nav glf-button" data-glf-cuid="a3c88eed-eb40-41ba-b81e-2e64607109a2" data-glf-ruid="2e44b3ce-e9ad-4f3e-a02a-becca4a63b6f">
+            Objednať teraz
+          </a>
+        </li>
+      </ul>
+      <button class="nav__burger" id="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero__bg"></div>
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <p class="hero__eyebrow">Pizzeria &amp; Ristorante</p>
+      <h1 class="hero__title">Chuť Talianska<br /><em>v srdci Sásovej</em></h1>
+      <p class="hero__desc">Pravá pizza z pece, domáce cestoviny a sviežé šaláty od roku 2001.<br />Dve prevádzky, jedna vášeň – vaša chuť.</p>
+      <div class="hero__actions">
+        <a href="javascript:void(0)" class="btn btn--primary glf-button" data-glf-cuid="a3c88eed-eb40-41ba-b81e-2e64607109a2" data-glf-ruid="2e44b3ce-e9ad-4f3e-a02a-becca4a63b6f">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          Objednať teraz
+        </a>
+        <a href="#menu" class="btn btn--ghost">Pozrieť menu</a>
+      </div>
+      <div class="hero__badges">
+        <div class="badge"><span class="badge__num">25+</span><span class="badge__lbl">rokov tradície</span></div>
+        <div class="badge__divider"></div>
+        <div class="badge"><span class="badge__num">2</span><span class="badge__lbl">prevádzky</span></div>
+        <div class="badge__divider"></div>
+        <div class="badge"><span class="badge__num">€0</span><span class="badge__lbl">doprava od €11</span></div>
+      </div>
+    </div>
+    <div class="hero__scroll">
+      <span>Scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- HOURS BAR -->
+  <div class="hours-bar" id="hours">
+    <div class="container">
+      <p class="section__label">Otváracie hodiny</p>
+    </div>
+    <div class="container hours-bar__inner" style="margin-top:16px;">
+      <div class="hours-bar__group">
+        <div class="hours-bar__heading">
+          <span class="hours-bar__icon">🍽️</span>
+          <span class="hours-bar__label">Reštaurácia</span>
+        </div>
+        <div class="hours-bar__rows">
+          <div class="hours-bar__item"><strong>Pondelok – Štvrtok</strong><span class="hours-bar__time">11:00 – 21:00</span></div>
+          <div class="hours-bar__item"><strong>Piatok – Sobota</strong><span class="hours-bar__time">11:00 – 22:00</span></div>
+          <div class="hours-bar__item"><strong>Nedeľa</strong><span class="hours-bar__time">11:00 – 20:00</span></div>
+        </div>
+      </div>
+      <div class="hours-bar__group">
+        <div class="hours-bar__heading">
+          <span class="hours-bar__icon">🛵</span>
+          <span class="hours-bar__label">Donáška</span>
+        </div>
+        <div class="hours-bar__rows">
+          <div class="hours-bar__item"><strong>Pondelok – Štvrtok</strong><span class="hours-bar__time">10:30 – 20:45</span></div>
+          <div class="hours-bar__item"><strong>Piatok – Sobota</strong><span class="hours-bar__time">10:30 – 21:45</span></div>
+          <div class="hours-bar__item"><strong>Nedeľa</strong><span class="hours-bar__time">10:30 – 19:45</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DELIVERY -->
+  <section class="delivery section" id="delivery">
+    <div class="container">
+      <div class="delivery__grid">
+        <div class="delivery__text">
+          <p class="section__label">Donáška</p>
+          <h2 class="section__title">Doručíme priamo<br />k vašim dverám</h2>
+          <p>Objednajte si online alebo telefonicky. Minimálna hodnota objednávky je <strong>11€</strong> (bez nápojov). Doprava v meste <strong>zdarma</strong>. Informácie o donáške mimo mesta žiadajte telefonicky.</p>
+          <ul class="delivery__list">
+            <li>
+              <div class="delivery__icon">⚡</div>
+              <span>Rýchle vybavenie objednávky</span>
+            </li>
+            <li>
+              <div class="delivery__icon">🏙️</div>
+              <span>Rozvoz po celej Banskej Bystrici</span>
+            </li>
+            <li>
+              <div class="delivery__icon">📦</div>
+              <span>Balenie a príbory na požiadanie</span>
+            </li>
+          </ul>
+          <a href="javascript:void(0)" class="btn btn--primary glf-button" data-glf-cuid="a3c88eed-eb40-41ba-b81e-2e64607109a2" data-glf-ruid="2e44b3ce-e9ad-4f3e-a02a-becca4a63b6f">Objednať online</a>
+        </div>
+        <div class="delivery__visual">
+          <div class="delivery__card">
+            <div class="delivery__card-icon">🛵</div>
+            <h4>Donáška zdarma</h4>
+            <p>Pri objednávke nad</p>
+            <div class="delivery__price">€11</div>
+            <p class="delivery__note">* bez nápojov, v rámci mesta</p>
+          </div>
+          <div class="delivery__phones">
+            <a href="tel:+421484172525" class="phone-pill">
+              <span>📞</span> +421 48 417 2525
+            </a>
+            <a href="tel:+421483810515" class="phone-pill">
+              <span>📞</span> +421 48 381 0515
+            </a>
+            <a href="tel:+421911332955" class="phone-pill phone-pill--mobile">
+              <span>📱</span> +421 911 332 955
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU PREVIEW -->
+  <section class="menu section" id="menu">
+    <div class="container">
+      <p class="section__label">Naše menu</p>
+      <h2 class="section__title">Čo u nás nájdete</h2>
+      <div class="menu__tabs" id="menuTabs">
+        <button class="menu__tab active" data-cat="pizza">Pizza</button>
+        <button class="menu__tab" data-cat="pasta">Cestoviny</button>
+        <button class="menu__tab" data-cat="steaks">Steaky</button>
+        <button class="menu__tab" data-cat="salads">Šaláty</button>
+        <button class="menu__tab" data-cat="desserts">Dezerty</button>
+      </div>
+      <div class="menu__grid" id="menuGrid">
+        <!-- filled by JS -->
+      </div>
+      <div class="menu__cta">
+        <a href="javascript:void(0)" class="btn btn--primary glf-button" data-glf-cuid="a3c88eed-eb40-41ba-b81e-2e64607109a2" data-glf-ruid="2e44b3ce-e9ad-4f3e-a02a-becca4a63b6f">Celé menu &amp; objednávka</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DAILY MENU BANNER -->
+  <section class="daily" id="daily">
+    <div class="daily__inner container">
+      <div class="daily__text">
+        <p class="daily__label">Každý pracovný deň</p>
+        <h3 class="daily__title">Denné menu</h3>
+        <p class="daily__desc">Polievka + hlavné jedlo za skvelú cenu. Menilo sa každý deň, vždy čerstvé.</p>
+      </div>
+      <a href="javascript:void(0)" class="btn btn--white glf-button" data-glf-cuid="a3c88eed-eb40-41ba-b81e-2e64607109a2" data-glf-ruid="2e44b3ce-e9ad-4f3e-a02a-becca4a63b6f">Pozrieť ponuku</a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <p class="section__label">Nájdite nás</p>
+      <h2 class="section__title">Kontakt &amp; prevádzky</h2>
+      <div class="contact__grid">
+        <div class="contact__card">
+          <div class="contact__card-num">01</div>
+          <h3>Prevádzka Rudohorská</h3>
+          <address>
+            <p>📍 Rudohorská 12<br />974 11 Banská Bystrica</p>
+            <p><a href="tel:+421484172525">📞 +421 48 417 2525</a></p>
+            <p><a href="tel:+421911332955">📱 +421 911 332 955</a></p>
+          </address>
+        </div>
+        <div class="contact__card">
+          <div class="contact__card-num">02</div>
+          <h3>Prevádzka Nám. SNP</h3>
+          <address>
+            <p>📍 Nám. SNP 8<br />974 11 Banská Bystrica</p>
+            <p><a href="tel:+421483810515">📞 +421 48 381 0515</a></p>
+          </address>
+        </div>
+        <div class="contact__card">
+          <div class="contact__card-num">✉</div>
+          <h3>Napíšte nám</h3>
+          <address>
+            <p><a href="mailto:evijosasova@gmail.com">evijosasova@gmail.com</a></p>
+          </address>
+          <div class="contact__social">
+            <a href="https://www.facebook.com" target="_blank" class="social-btn" aria-label="Facebook">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+              Facebook
+            </a>
+          </div>
+        </div>
+        <div class="contact__card contact__card--map">
+          <iframe
+            title="Evijo Sásová mapa"
+            src="https://maps.google.com/maps?q=Pizzeria+Evijo+Sásová+Banská+Bystrica&output=embed"
+            width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy">
+          </iframe>
+          <a
+            href="https://maps.google.com/?q=Pizzeria+Evijo+Sásová+Banská+Bystrica"
+            target="_blank"
+            class="btn btn--sm btn--primary"
+            style="margin-top:12px;width:100%;text-align:center;"
+          >Otvoriť v Google Maps</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="about__grid">
+        <div class="about__visual">
+          <div class="about__img-wrap">
+            <div class="about__img about__img--main" style="background-image:url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=700&q=80')"></div>
+            <div class="about__img about__img--accent" style="background-image:url('https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&q=80')"></div>
+          </div>
+          <div class="about__since">
+            <span class="about__since-year">2001</span>
+            <span class="about__since-lbl">Rok vzniku</span>
+          </div>
+        </div>
+        <div class="about__text">
+          <p class="section__label">O nás</p>
+          <h2 class="section__title">Viac než len reštaurácia</h2>
+          <p>MD GASTRO Pizzeria EVIJO je rodinný podnik s dušou. Od roku 2001 prinášame do Banská Bystrice – Sásovej autentickú taliansku kuchyňu: chrumkavé pizze z pece, al dente cestoviny, šťavnaté steaky a sviežé šaláty.</p>
+          <p>Fungujeme na dvoch adresách a ponúkame aj donáškovú službu, aby sa chuť dobrého jedla dostala priamo k vám domov.</p>
+          <div class="about__features">
+            <div class="feature">
+              <div class="feature__icon feature__icon--red">🍕</div>
+              <div>
+                <strong>Pravá talianska pizza</strong>
+                <p>Pripravovaná podľa tradičných receptúr, pečená v horúcej peci.</p>
+              </div>
+            </div>
+            <div class="feature">
+              <div class="feature__icon feature__icon--orange">🍝</div>
+              <div>
+                <strong>Cestoviny &amp; rizotá</strong>
+                <p>Domáce omáčky a čerstvé suroviny každý deň.</p>
+              </div>
+            </div>
+            <div class="feature">
+              <div class="feature__icon feature__icon--green">🥗</div>
+              <div>
+                <strong>Čerstvé šaláty</strong>
+                <p>Sezónna zelenina, pesto a domáce dresingy.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        Pizzeria EVIJO Sásová, MD GASTRO
+        <p>Banská Bystrica od roku 2001</p>
+      </div>
+      <div class="footer__links">
+        <strong>Navigácia</strong>
+        <a href="#home">Úvod</a>
+        <a href="#about">O nás</a>
+        <a href="#menu">Menu</a>
+        <a href="#delivery">Donáška</a>
+        <a href="#contact">Kontakt</a>
+      </div>
+      <div class="footer__links">
+        <strong>Kontakt</strong>
+        <a href="tel:+421484172525">+421 48 417 2525</a>
+        <a href="tel:+421911332955">+421 911 332 955</a>
+        <a href="mailto:evijosasova@gmail.com">evijosasova@gmail.com</a>
+      </div>
+      <div class="footer__order">
+        <p>Objednajte si jedlo priamo online</p>
+        <a href="javascript:void(0)" class="btn btn--primary glf-button" data-glf-cuid="a3c88eed-eb40-41ba-b81e-2e64607109a2" data-glf-ruid="2e44b3ce-e9ad-4f3e-a02a-becca4a63b6f">Objednať teraz</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2026 MD GASTRO Pizzeria EVIJO – Sásová. Všetky práva vyhradené.</p>
+    </div>
+  </footer>
+
+  <!-- ITALIAN TRICOLORE BOTTOM -->
+  <div class="tricolore tricolore--bottom" aria-hidden="true"></div>
+
+  <script src="https://www.fbgcdn.com/embedder/js/ewm2.js" defer async></script>
+  <script src="script.js"></script>
+</body>
+</html>
