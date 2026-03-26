@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pizza menu – Pizzeria EVIJO Sásová</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="tricolore tricolore--top" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <nav class="nav scrolled" id="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="logo2.png" alt="Evijo Sásová" class="nav__logo-img" />
+      </a>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="index.html#delivery">Donáška</a></li>
+        <li><a href="index.html#menu">Menu</a></li>
+        <li><a href="index.html#daily">Denné menu</a></li>
+        <li><a href="index.html#about">O nás</a></li>
+        <li><a href="index.html#contact">Kontakt</a></li>
+        <li>
+          <a href="javascript:void(0)" class="btn btn--nav glf-button"
+             data-glf-cuid="a3c88eed-eb40-41ba-b81e-2e64607109a2"
+             data-glf-ruid="2e44b3ce-e9ad-4f3e-a02a-becca4a63b6f">
+            Objednať teraz
+          </a>
+        </li>
+      </ul>
+      <button class="nav__burger" id="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="pizza-hero">
+    <div class="pizza-hero__bg"></div>
+    <div class="pizza-hero__overlay"></div>
+    <div class="container pizza-hero__content">
+      <a href="index.html#menu" class="pizza-hero__back">← Späť na menu</a>
+      <p class="section__label">Pizza menu</p>
+      <h1 class="pizza-hero__title">Všetkých <em>30 druhov</em> pizze</h1>
+      <p class="pizza-hero__desc">Pravá pizza z pece, pripravovaná podľa talianskych receptúr.</p>
+    </div>
+  </section>
+
+  <!-- PIZZA GRID -->
+  <section class="pizza-list section">
+    <div class="container">
+      <div class="pizza-list__mode">
+        <button class="menu__toggle-btn active" data-mode="restaurant" id="modeRestaurant">🍽️ Reštaurácia</button>
+        <button class="menu__toggle-btn" data-mode="delivery" id="modeDelivery">🛵 Rozvoz</button>
+      </div>
+      <div class="menu__grid" id="pizzaGrid">
+        <!-- filled by JS -->
+      </div>
+    </div>
+  </section>
+
+  <div class="tricolore tricolore--bottom" aria-hidden="true"></div>
+
+  <script src="https://www.fbgcdn.com/embedder/js/ewm2.js" defer async></script>
+  <script>
+    // ===== NAV =====
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    });
+    const burger = document.getElementById('burger');
+    const navLinks = document.getElementById('navLinks');
+    burger.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    // ===== ALL 30 PIZZAS =====
+    // Replace placeholder items below with real pizza names, descriptions and prices
+    const allPizzas = {
+      restaurant: [
+        { name: 'Margherita',       desc: 'Paradajková omáčka, mozzarella, bazalka',                         price: '€6.50',  tag: 'Klasika',  img: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=500&q=80' },
+        { name: 'Quattro Formaggi', desc: 'Mozzarella, gorgonzola, parmezán, eidam',                         price: '€8.90',  tag: 'Obľúbená', img: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500&q=80' },
+        { name: 'Diavola',          desc: 'Paradajková omáčka, pikantná saláma, chilli, olivy',              price: '€7.80',  tag: 'Pikantná', img: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500&q=80' },
+        { name: 'Prosciutto',       desc: 'Šunka prosciutto, rukola, cherry paradajky, parmezán',            price: '€9.20',  tag: 'Premium',  img: 'https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?w=500&q=80' },
+        { name: 'Hawai',            desc: 'Šunka, ananás, mozzarella',                                       price: '€7.50',  tag: 'Sladká',   img: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500&q=80' },
+        { name: 'Špenátová',        desc: 'Špenát, mozzarella, cesnak, syr feta',                            price: '€8.20',  tag: 'Vegán',    img: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=500&q=80' },
+        { name: 'BBQ Kurča',        desc: 'BBQ omáčka, kuracie mäso, červená cibuľa, mozzarella',           price: '€8.80',  tag: 'Gril',     img: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500&q=80' },
+        { name: 'Funghi',           desc: 'Šampiňóny, mozzarella, cesnak, oregano',                         price: '€7.20',  tag: 'Vegán',    img: 'https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?w=500&q=80' },
+        { name: 'Salami',           desc: 'Saláma, mozzarella, paradajková omáčka',                         price: '€7.00',  tag: 'Klasika',  img: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=500&q=80' },
+        { name: 'Capricciosa',      desc: 'Šunka, artičoky, šampiňóny, olivy, mozzarella',                 price: '€8.50',  tag: 'Obľúbená', img: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500&q=80' },
+        { name: 'Tonno',            desc: 'Tuniak, červená cibuľa, kapary, mozzarella',                     price: '€8.80',  tag: 'More',     img: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500&q=80' },
+        { name: 'Vegetariana',      desc: 'Grilovaná zelenina, mozzarella, paradajková omáčka',             price: '€7.80',  tag: 'Vegán',    img: 'https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?w=500&q=80' },
+        { name: 'Pepperoni',        desc: 'Pepperoni, mozzarella, jalapeños',                               price: '€8.20',  tag: 'Pikantná', img: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=500&q=80' },
+        { name: 'Bianca',           desc: 'Biela omáčka, mozzarella, cesnak, rozmarín',                     price: '€7.50',  tag: 'Biela',    img: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500&q=80' },
+        { name: 'Nduja',            desc: 'Nduja, mozzarella, med, orechy',                                  price: '€9.50',  tag: 'Premium',  img: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500&q=80' },
+        { name: 'Mexicana',         desc: 'Mleté mäso, fazuľa, jalapeños, mozzarella',                      price: '€8.80',  tag: 'Pikantná', img: 'https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?w=500&q=80' },
+        { name: 'Salsiccia',        desc: 'Talianska klobása, feniklový krém, provolone',                   price: '€9.20',  tag: 'Talianska',img: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=500&q=80' },
+        { name: 'Anchovy',          desc: 'Ančovičky, olivy, kapary, cherry paradajky',                     price: '€8.50',  tag: 'More',     img: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500&q=80' },
+        { name: 'Bresaola',         desc: 'Sušená hovädzina, rukola, parmezán, citron',                     price: '€10.50', tag: 'Premium',  img: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500&q=80' },
+        { name: 'Mortadella',       desc: 'Mortadella, pistácie, stracciatella',                             price: '€10.20', tag: 'Premium',  img: 'https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?w=500&q=80' },
+        { name: 'Truffle',          desc: 'Smotana z hľuzovky, mozzarella, parmezán, šampiňóny',           price: '€12.50', tag: 'Špeciál',  img: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=500&q=80' },
+        { name: 'Bufalina',         desc: 'Bufala mozzarella, cherry paradajky, bazalka',                   price: '€10.80', tag: 'Premium',  img: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500&q=80' },
+        { name: 'Spinaci e Ricotta',desc: 'Ricotta, špenát, mozzarella, muškátový oriešok',                price: '€9.00',  tag: 'Vegán',    img: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500&q=80' },
+        { name: 'Pollo e Pesto',    desc: 'Kuracie mäso, pesto, cherry paradajky, mozzarella',             price: '€9.50',  tag: 'Gril',     img: 'https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?w=500&q=80' },
+        { name: 'Calabrese',        desc: 'Chorizo, červená paprika, mozzarella, chilli olej',              price: '€9.20',  tag: 'Pikantná', img: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=500&q=80' },
+        { name: 'Crudo e Fichi',    desc: 'Surová šunka, figa, gorgonzola, med',                            price: '€11.50', tag: 'Špeciál',  img: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500&q=80' },
+        { name: 'Patata',           desc: 'Zemiaky, rozmarín, slanina, mozzarella',                         price: '€8.50',  tag: 'Domáca',   img: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500&q=80' },
+        { name: 'Sfincione',        desc: 'Paradajky, cibuľa, ančovičky, oregano, syr',                    price: '€8.80',  tag: 'Sicílska', img: 'https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?w=500&q=80' },
+        { name: 'Evijo špeciál',    desc: 'Tajný recept šéfkuchára – pýtajte sa obsluhy',                  price: '€11.00', tag: 'Šéfkuchár',img: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=500&q=80' },
+        { name: 'Stagionale',       desc: 'Sezónne suroviny podľa aktuálnej ponuky',                       price: '€9.80',  tag: 'Sezónna',  img: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500&q=80' },
+      ],
+      delivery: [
+        { name: 'Margherita',       desc: 'Paradajková omáčka, mozzarella, bazalka',                         price: '€6.50',  tag: 'Klasika',  img: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=500&q=80' },
+        { name: 'Quattro Formaggi', desc: 'Mozzarella, gorgonzola, parmezán, eidam',                         price: '€8.90',  tag: 'Obľúbená', img: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500&q=80' },
+        { name: 'Diavola',          desc: 'Paradajková omáčka, pikantná saláma, chilli, olivy',              price: '€7.80',  tag: 'Pikantná', img: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500&q=80' },
+        { name: 'Prosciutto',       desc: 'Šunka prosciutto, rukola, cherry paradajky, parmezán',            price: '€9.50',  tag: 'Premium',  img: 'https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?w=500&q=80' },
+        { name: 'Hawai',            desc: 'Šunka, ananás, mozzarella',                                       price: '€7.80',  tag: 'Sladká',   img: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500&q=80' },
+        { name: 'Špenátová',        desc: 'Špenát, mozzarella, cesnak, syr feta',                            price: '€8.50',  tag: 'Vegán',    img: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=500&q=80' },
+        { name: 'BBQ Kurča',        desc: 'BBQ omáčka, kuracie mäso, červená cibuľa, mozzarella',           price: '€9.20',  tag: 'Gril',     img: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500&q=80' },
+        { name: 'Funghi',           desc: 'Šampiňóny, mozzarella, cesnak, oregano',                         price: '€7.50',  tag: 'Vegán',    img: 'https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?w=500&q=80' },
+        { name: 'Salami',           desc: 'Saláma, mozzarella, paradajková omáčka',                         price: '€7.20',  tag: 'Klasika',  img: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=500&q=80' },
+        { name: 'Capricciosa',      desc: 'Šunka, artičoky, šampiňóny, olivy, mozzarella',                 price: '€8.80',  tag: 'Obľúbená', img: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500&q=80' },
+        { name: 'Tonno',            desc: 'Tuniak, červená cibuľa, kapary, mozzarella',                     price: '€9.00',  tag: 'More',     img: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500&q=80' },
+        { name: 'Vegetariana',      desc: 'Grilovaná zelenina, mozzarella, paradajková omáčka',             price: '€8.00',  tag: 'Vegán',    img: 'https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?w=500&q=80' },
+        { name: 'Pepperoni',        desc: 'Pepperoni, mozzarella, jalapeños',                               price: '€8.50',  tag: 'Pikantná', img: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=500&q=80' },
+        { name: 'Bianca',           desc: 'Biela omáčka, mozzarella, cesnak, rozmarín',                     price: '€7.80',  tag: 'Biela',    img: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500&q=80' },
+        { name: 'Mexicana',         desc: 'Mleté mäso, fazuľa, jalapeños, mozzarella',                      price: '€9.00',  tag: 'Pikantná', img: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500&q=80' },
+        { name: 'Pollo e Pesto',    desc: 'Kuracie mäso, pesto, cherry paradajky, mozzarella',             price: '€9.80',  tag: 'Gril',     img: 'https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?w=500&q=80' },
+        { name: 'Patata',           desc: 'Zemiaky, rozmarín, slanina, mozzarella',                         price: '€8.80',  tag: 'Domáca',   img: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=500&q=80' },
+        { name: 'Calabrese',        desc: 'Chorizo, červená paprika, mozzarella, chilli olej',              price: '€9.50',  tag: 'Pikantná', img: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500&q=80' },
+        { name: 'Capricciosa',      desc: 'Šunka, artičoky, šampiňóny, olivy, mozzarella',                 price: '€8.80',  tag: 'Obľúbená', img: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500&q=80' },
+        { name: 'Evijo špeciál',    desc: 'Tajný recept šéfkuchára',                                        price: '€11.50', tag: 'Šéfkuchár',img: 'https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?w=500&q=80' },
+      ],
+    };
+
+    let currentMode = 'restaurant';
+
+    function renderPizzas(mode) {
+      const grid = document.getElementById('pizzaGrid');
+      grid.innerHTML = '';
+      allPizzas[mode].forEach((item, i) => {
+        const card = document.createElement('div');
+        card.className = 'menu-card reveal';
+        card.innerHTML = `
+          <div class="menu-card__img" style="background-image:url('${item.img}')">
+            <span class="menu-card__tag">${item.tag}</span>
+          </div>
+          <div class="menu-card__body">
+            <div class="menu-card__name">${item.name}</div>
+            <div class="menu-card__desc">${item.desc}</div>
+            <div class="menu-card__footer">
+              <span class="menu-card__price">${item.price}</span>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+      requestAnimationFrame(() => {
+        grid.querySelectorAll('.reveal').forEach((el, i) => {
+          setTimeout(() => el.classList.add('visible'), i * 40);
+        });
+      });
+    }
+
+    document.getElementById('modeRestaurant').addEventListener('click', () => {
+      currentMode = 'restaurant';
+      document.getElementById('modeRestaurant').classList.add('active');
+      document.getElementById('modeDelivery').classList.remove('active');
+      renderPizzas(currentMode);
+    });
+    document.getElementById('modeDelivery').addEventListener('click', () => {
+      currentMode = 'delivery';
+      document.getElementById('modeDelivery').classList.add('active');
+      document.getElementById('modeRestaurant').classList.remove('active');
+      renderPizzas(currentMode);
+    });
+
+    renderPizzas(currentMode);
+  </script>
+</body>
+</html>

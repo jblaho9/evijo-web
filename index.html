@@ -218,16 +218,33 @@
   <section class="menu section" id="menu">
     <div class="container">
       <p class="section__label">Naše menu</p>
-      <h2 class="section__title">Čo u nás nájdete</h2>
-      <div class="menu__tabs" id="menuTabs">
-        <button class="menu__tab active" data-cat="pizza">Pizza</button>
-        <button class="menu__tab" data-cat="pasta">Cestoviny</button>
-        <button class="menu__tab" data-cat="steaks">Steaky</button>
-        <button class="menu__tab" data-cat="salads">Šaláty</button>
-        <button class="menu__tab" data-cat="desserts">Dezerty</button>
+      <div class="menu__header">
+        <h2 class="section__title">Čo u nás nájdete</h2>
+        <div class="menu__toggle" id="menuToggle">
+          <button class="menu__toggle-btn active" data-mode="restaurant">🍽️ Reštaurácia</button>
+          <button class="menu__toggle-btn" data-mode="delivery">🛵 Rozvoz</button>
+        </div>
+      </div>
+      <div class="menu__controls">
+        <div class="menu__tabs" id="menuTabs">
+          <button class="menu__tab" data-cat="polievky">Polievky</button>
+          <button class="menu__tab active" data-cat="pizza">Pizza</button>
+          <button class="menu__tab" data-cat="cestoviny">Cestoviny & Rizotá</button>
+          <button class="menu__tab" data-cat="hlavne">Hlavné jedlá</button>
+          <button class="menu__tab" data-cat="salaty">Šaláty</button>
+          <button class="menu__tab" data-cat="prilohy">Prílohy</button>
+          <button class="menu__tab" data-cat="dezerty">Dezerty & Nápoje</button>
+        </div>
       </div>
       <div class="menu__grid" id="menuGrid">
         <!-- filled by JS -->
+      </div>
+      <div class="menu__pizza-cta" id="pizzaCta">
+        <div class="menu__pizza-cta-text">
+          <strong>Máme 30 druhov pizze</strong>
+          <span>Toto je len výber tých najobľúbenejších</span>
+        </div>
+        <a href="pizza.html" class="btn btn--primary">Celé pizza menu →</a>
       </div>
       <div class="menu__cta">
         <a href="javascript:void(0)" class="btn btn--primary glf-button" data-glf-cuid="a3c88eed-eb40-41ba-b81e-2e64607109a2" data-glf-ruid="2e44b3ce-e9ad-4f3e-a02a-becca4a63b6f">Celé menu &amp; objednávka</a>
