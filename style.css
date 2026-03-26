@@ -112,11 +112,13 @@ img { display: block; max-width: 100%; }
 
 .btn--primary {
   background: #ef8b17;
-  color: var(--white);
+  color: var(--white);    
   border-radius: 0;
   box-shadow: 0 4px 20px rgba(239,139,23,.4);
 }
 .btn--primary:hover { box-shadow: 0 8px 28px rgba(239,139,23,.55); }
+.hero__actions .btn--primary { border-radius: var(--radius-pill) !important; padding: 14px 28px !important; }
+.hero__actions .btn--ghost { padding: 14px 28px; }
 
 .btn--ghost {
   background: rgba(255,255,255,.15);
@@ -561,7 +563,7 @@ img { display: block; max-width: 100%; }
 .daily__desc { color: rgba(255,255,255,.85); max-width: 460px; }
 
 /* === DELIVERY === */
-.delivery { background: var(--white); scroll-margin-top: var(--nav-h); }
+.delivery { background: var(--white); scroll-margin-top: var(--nav-h); padding-top: 48px; }
 
 .delivery__grid {
   display: grid;
