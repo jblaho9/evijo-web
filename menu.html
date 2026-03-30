@@ -26,22 +26,14 @@
       transition: color .2s;
     }
     .page-header__back:hover { color: var(--green); }
-    .page-header .section__title { margin-bottom: 0; }
-
-    .menu-controls {
-      background: var(--white);
-      border-bottom: 2px solid var(--border);
-      position: sticky;
-      top: var(--nav-h);
-      z-index: 50;
-      padding: 14px 0;
-    }
-    .menu-controls__inner {
+    .page-header__title-row {
       display: flex;
       align-items: center;
       gap: 20px;
       flex-wrap: wrap;
+      justify-content: space-between;
     }
+    .page-header__title-row .section__title { margin-bottom: 0; }
 
     .menu-full { background: var(--cream); padding: 48px 0 100px; }
     .menu-full .menu__tabs { margin-bottom: 28px; }
@@ -90,22 +82,18 @@
         Späť
       </a>
       <p class="section__label">Celé menu</p>
-      <h1 class="section__title">Čo u nás nájdete</h1>
-    </div>
-  </div>
-
-  <!-- STICKY CONTROLS -->
-  <div class="menu-controls">
-    <div class="container menu-controls__inner">
-      <div class="menu__toggle" id="menuToggle">
-        <button class="menu__toggle-btn active" data-mode="restaurant">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3"/><path d="M21 15v7"/></svg>
-          Reštaurácia
-        </button>
-        <button class="menu__toggle-btn" data-mode="delivery">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-          Rozvoz
-        </button>
+      <div class="page-header__title-row">
+        <h1 class="section__title">Čo u nás nájdete</h1>
+        <div class="menu__toggle" id="menuToggle">
+          <button class="menu__toggle-btn active" data-mode="restaurant">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3"/><path d="M21 15v7"/></svg>
+            Reštaurácia
+          </button>
+          <button class="menu__toggle-btn" data-mode="delivery">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            Rozvoz
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -132,7 +120,7 @@
   <script>
     // ===== NAV =====
     const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+    window.addEventListener('scroll', () => nav.classList.add('scrolled'));
     const burger = document.getElementById('burger');
     const navLinks = document.getElementById('navLinks');
     burger.addEventListener('click', () => navLinks.classList.toggle('open'));
