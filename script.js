@@ -1,10 +1,12 @@
-// ===== FORCE SCROLL TO TOP ON LOAD =====
-if (history.scrollRestoration) history.scrollRestoration = 'manual';
-if (window.location.hash) {
-  history.replaceState(null, document.title, window.location.pathname + window.location.search);
+// ===== SCROLL TO TOP ON FRESH LOAD ONLY =====
+const navType = performance.getEntriesByType('navigation')[0]?.type;
+if (navType !== 'back_forward' && !window.location.hash) {
+  if (history.scrollRestoration) history.scrollRestoration = 'manual';
+  window.scrollTo(0, 0);
+  window.addEventListener('load', () => window.scrollTo({ top: 0, behavior: 'instant' }));
+} else {
+  if (history.scrollRestoration) history.scrollRestoration = 'auto';
 }
-window.scrollTo(0, 0);
-window.addEventListener('load', () => window.scrollTo({ top: 0, behavior: 'instant' }));
 
 // ===== NAV SCROLL =====
 const nav = document.getElementById('nav');
@@ -105,9 +107,9 @@ let currentCat = 'pizza';
 
 function renderMenu(cat) {
   const grid = document.getElementById('menuGrid');
-  const pizzaCta = document.getElementById('pizzaCta');
+  const menuFade = document.getElementById('menuFade');
   grid.innerHTML = '';
-  if (pizzaCta) pizzaCta.style.display = 'none';
+  if (menuFade) menuFade.classList.add('hidden');
 
   const items = menuData[currentMode][cat] || [];
   if (items.length === 0) {
@@ -136,7 +138,11 @@ function renderMenu(cat) {
       setTimeout(() => el.classList.add('visible'), i * 80);
     });
   });
-  if (cat === 'pizza' && pizzaCta) pizzaCta.style.display = 'flex';
+  if (cat === 'pizza' && menuFade) {
+    menuFade.classList.remove('hidden');
+    const pizzaLink = menuFade.querySelector('a');
+    if (pizzaLink) pizzaLink.href = currentMode === 'delivery' ? 'pizza.html?mode=delivery' : 'pizza.html';
+  }
 }
 
 // mode toggle
@@ -160,6 +166,25 @@ document.getElementById('menuTabs').addEventListener('click', e => {
 });
 
 renderMenu(currentCat);
+
+// ===== SCROLL SPY =====
+const spySections = ['home', 'delivery', 'menu', 'daily', 'about', 'contact'];
+const spyLinks = {};
+document.querySelectorAll('.nav__links a[href^="#"]').forEach(a => {
+  const id = a.getAttribute('href').replace('#', '');
+  spyLinks[id] = a;
+});
+const spyEls = spySections.map(id => document.getElementById(id)).filter(Boolean);
+const spyObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      Object.values(spyLinks).forEach(a => a.classList.remove('nav__link--active'));
+      if (spyLinks[entry.target.id]) spyLinks[entry.target.id].classList.add('nav__link--active');
+    }
+  });
+}, { rootMargin: '-30% 0px -65% 0px' });
+spyEls.forEach(el => spyObserver.observe(el));
+
 
 // ===== SCROLL REVEAL =====
 const observer = new IntersectionObserver(entries => {

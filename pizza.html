@@ -6,7 +6,7 @@
   <title>Pizza menu – Pizzeria EVIJO Sásová</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Raleway:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -20,8 +20,8 @@
         <img src="logo2.png" alt="Evijo Sásová" class="nav__logo-img" />
       </a>
       <ul class="nav__links" id="navLinks">
+        <li><a href="index.html#menu">Ponuka</a></li>
         <li><a href="index.html#delivery">Donáška</a></li>
-        <li><a href="index.html#menu">Menu</a></li>
         <li><a href="index.html#daily">Denné menu</a></li>
         <li><a href="index.html#about">O nás</a></li>
         <li><a href="index.html#contact">Kontakt</a></li>
@@ -45,6 +45,7 @@
     <div class="pizza-hero__overlay"></div>
     <div class="container pizza-hero__content">
       <a href="index.html#menu" class="pizza-hero__back">← Späť na menu</a>
+
       <p class="section__label">Pizza menu</p>
       <h1 class="pizza-hero__title">Všetkých <em>30 druhov</em> pizze</h1>
       <p class="pizza-hero__desc">Pravá pizza z pece, pripravovaná podľa talianskych receptúr.</p>
@@ -55,8 +56,8 @@
   <section class="pizza-list section">
     <div class="container">
       <div class="pizza-list__mode">
-        <button class="menu__toggle-btn active" data-mode="restaurant" id="modeRestaurant">🍽️ Reštaurácia</button>
-        <button class="menu__toggle-btn" data-mode="delivery" id="modeDelivery">🛵 Rozvoz</button>
+        <button class="menu__toggle-btn active" data-mode="restaurant" id="modeRestaurant"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3"/><path d="M21 15v7"/></svg> Reštaurácia</button>
+        <button class="menu__toggle-btn" data-mode="delivery" id="modeDelivery"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg> Rozvoz</button>
       </div>
       <div class="menu__grid" id="pizzaGrid">
         <!-- filled by JS -->
@@ -68,6 +69,7 @@
 
   <script src="https://www.fbgcdn.com/embedder/js/ewm2.js" defer async></script>
   <script>
+
     // ===== NAV =====
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => {
@@ -139,7 +141,13 @@
       ],
     };
 
-    let currentMode = 'restaurant';
+    const urlMode = new URLSearchParams(window.location.search).get('mode');
+    let currentMode = urlMode === 'delivery' ? 'delivery' : 'restaurant';
+
+    if (currentMode === 'delivery') {
+      document.getElementById('modeDelivery').classList.add('active');
+      document.getElementById('modeRestaurant').classList.remove('active');
+    }
 
     function renderPizzas(mode) {
       const grid = document.getElementById('pizzaGrid');
@@ -182,6 +190,7 @@
     });
 
     renderPizzas(currentMode);
+
   </script>
 </body>
 </html>
