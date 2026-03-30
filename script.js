@@ -40,7 +40,13 @@ const pizzaTop = [
 const menuData = {
   restaurant: {
     polievky: [
-      { name: 'Polievka dňa', desc: 'Čerstvá polievka podľa dennej ponuky', price: '€2.00', tag: 'Denná', img: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=500&q=80' },
+      { name: 'Polievka dňa',       desc: 'Čerstvá polievka podľa dennej ponuky',         price: '€2.00', tag: 'Denná',    img: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=500&q=80' },
+      { name: 'Hovädzí vývar',      desc: 'Tradičný vývar s rezancami a zeleninou',        price: '€2.50', tag: 'Klasika',  img: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=500&q=80' },
+      { name: 'Paradajková polievka',desc: 'Krémová paradajková polievka, bazalka',        price: '€2.50', tag: 'Vegán',    img: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=500&q=80' },
+      { name: 'Cesnaková polievka',  desc: 'Cesnaková polievka so syrom a krutónmi',       price: '€2.50', tag: 'Domáca',   img: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=500&q=80' },
+      { name: 'Špenátová polievka',  desc: 'Krémová špenátová polievka s vajcom',          price: '€2.50', tag: 'Vegán',    img: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=500&q=80' },
+      { name: 'Fazuľová polievka',   desc: 'Hustá fazuľová polievka so slaninou',          price: '€2.80', tag: 'Domáca',   img: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=500&q=80' },
+      { name: 'Minestrone',          desc: 'Talianska zeleninová polievka s cestovinami',  price: '€2.80', tag: 'Talianska',img: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=500&q=80' },
     ],
     pizza: pizzaTop,
     cestoviny: [
@@ -76,7 +82,13 @@ const menuData = {
     ],
   },
   delivery: {
-    polievky: [],
+    polievky: [
+      { name: 'Polievka dňa',       desc: 'Čerstvá polievka podľa dennej ponuky',         price: '€2.00', tag: 'Denná',    img: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=500&q=80' },
+      { name: 'Hovädzí vývar',      desc: 'Tradičný vývar s rezancami a zeleninou',        price: '€2.50', tag: 'Klasika',  img: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=500&q=80' },
+      { name: 'Paradajková polievka',desc: 'Krémová paradajková polievka, bazalka',        price: '€2.50', tag: 'Vegán',    img: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=500&q=80' },
+      { name: 'Cesnaková polievka',  desc: 'Cesnaková polievka so syrom a krutónmi',       price: '€2.50', tag: 'Domáca',   img: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=500&q=80' },
+      { name: 'Fazuľová polievka',   desc: 'Hustá fazuľová polievka so slaninou',          price: '€2.80', tag: 'Domáca',   img: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=500&q=80' },
+    ],
     pizza: pizzaTop,
     cestoviny: [
       { name: 'Spaghetti Bolognese', desc: 'Hovädzí ragú so zeleninou, parmezán',          price: '€7.50', tag: 'Klasika',  img: 'https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb?w=500&q=80' },
