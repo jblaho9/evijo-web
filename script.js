@@ -153,7 +153,7 @@ function renderMenu(cat) {
   if (cat === 'pizza' && menuFade) {
     menuFade.classList.remove('hidden');
     const pizzaLink = menuFade.querySelector('a');
-    if (pizzaLink) pizzaLink.href = currentMode === 'delivery' ? 'pizza.html?mode=delivery' : 'pizza.html';
+    if (pizzaLink) pizzaLink.href = currentMode === 'delivery' ? 'menu.html?mode=delivery' : 'menu.html';
   }
 }
 
