@@ -1,0 +1,192 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+locale: sk
+
+collections:
+  - name: "menu"
+    label: "Menu"
+    files:
+      - label: "Reštaurácia – celé menu"
+        name: "restaurant"
+        file: "content/menu/restaurant.json"
+        fields:
+          - label: "Pizza"
+            name: "pizza"
+            widget: "list"
+            fields:
+              - { label: "Názov", name: "name", widget: "string" }
+              - { label: "Popis ingrediencií", name: "desc", widget: "string" }
+              - { label: "Cena (napr. €7.50)", name: "price", widget: "string" }
+              - { label: "Štítok (napr. Klasika)", name: "tag", widget: "string" }
+              - { label: "URL obrázka", name: "img", widget: "string" }
+          - label: "Cestoviny & Rizotá"
+            name: "cestoviny"
+            widget: "list"
+            fields:
+              - { label: "Názov", name: "name", widget: "string" }
+              - { label: "Popis", name: "desc", widget: "string" }
+              - { label: "Cena", name: "price", widget: "string" }
+              - { label: "Štítok", name: "tag", widget: "string" }
+              - { label: "URL obrázka", name: "img", widget: "string" }
+          - label: "Hlavné jedlá"
+            name: "hlavne"
+            widget: "list"
+            fields:
+              - { label: "Názov", name: "name", widget: "string" }
+              - { label: "Popis", name: "desc", widget: "string" }
+              - { label: "Cena", name: "price", widget: "string" }
+              - { label: "Štítok", name: "tag", widget: "string" }
+              - { label: "URL obrázka", name: "img", widget: "string" }
+          - label: "Šaláty"
+            name: "salaty"
+            widget: "list"
+            fields:
+              - { label: "Názov", name: "name", widget: "string" }
+              - { label: "Popis", name: "desc", widget: "string" }
+              - { label: "Cena", name: "price", widget: "string" }
+              - { label: "Štítok", name: "tag", widget: "string" }
+              - { label: "URL obrázka", name: "img", widget: "string" }
+          - label: "Polievky"
+            name: "polievky"
+            widget: "list"
+            fields:
+              - { label: "Názov", name: "name", widget: "string" }
+              - { label: "Popis", name: "desc", widget: "string" }
+              - { label: "Cena", name: "price", widget: "string" }
+              - { label: "Štítok", name: "tag", widget: "string" }
+              - { label: "URL obrázka", name: "img", widget: "string" }
+          - label: "Prílohy"
+            name: "prilohy"
+            widget: "list"
+            fields:
+              - { label: "Názov", name: "name", widget: "string" }
+              - { label: "Popis", name: "desc", widget: "string" }
+              - { label: "Cena", name: "price", widget: "string" }
+              - { label: "Štítok", name: "tag", widget: "string" }
+              - { label: "URL obrázka", name: "img", widget: "string" }
+          - label: "Dezerty & Nápoje"
+            name: "dezerty"
+            widget: "list"
+            fields:
+              - { label: "Názov", name: "name", widget: "string" }
+              - { label: "Popis", name: "desc", widget: "string" }
+              - { label: "Cena", name: "price", widget: "string" }
+              - { label: "Štítok", name: "tag", widget: "string" }
+              - { label: "URL obrázka", name: "img", widget: "string" }
+
+      - label: "Rozvoz – celé menu"
+        name: "delivery"
+        file: "content/menu/delivery.json"
+        fields:
+          - label: "Pizza"
+            name: "pizza"
+            widget: "list"
+            fields:
+              - { label: "Názov", name: "name", widget: "string" }
+              - { label: "Popis", name: "desc", widget: "string" }
+              - { label: "Cena", name: "price", widget: "string" }
+              - { label: "Štítok", name: "tag", widget: "string" }
+              - { label: "URL obrázka", name: "img", widget: "string" }
+          - label: "Cestoviny & Rizotá"
+            name: "cestoviny"
+            widget: "list"
+            fields:
+              - { label: "Názov", name: "name", widget: "string" }
+              - { label: "Popis", name: "desc", widget: "string" }
+              - { label: "Cena", name: "price", widget: "string" }
+              - { label: "Štítok", name: "tag", widget: "string" }
+              - { label: "URL obrázka", name: "img", widget: "string" }
+          - label: "Hlavné jedlá"
+            name: "hlavne"
+            widget: "list"
+            fields:
+              - { label: "Názov", name: "name", widget: "string" }
+              - { label: "Popis", name: "desc", widget: "string" }
+              - { label: "Cena", name: "price", widget: "string" }
+              - { label: "Štítok", name: "tag", widget: "string" }
+              - { label: "URL obrázka", name: "img", widget: "string" }
+          - label: "Šaláty"
+            name: "salaty"
+            widget: "list"
+            fields:
+              - { label: "Názov", name: "name", widget: "string" }
+              - { label: "Popis", name: "desc", widget: "string" }
+              - { label: "Cena", name: "price", widget: "string" }
+              - { label: "Štítok", name: "tag", widget: "string" }
+              - { label: "URL obrázka", name: "img", widget: "string" }
+          - label: "Polievky"
+            name: "polievky"
+            widget: "list"
+            fields:
+              - { label: "Názov", name: "name", widget: "string" }
+              - { label: "Popis", name: "desc", widget: "string" }
+              - { label: "Cena", name: "price", widget: "string" }
+              - { label: "Štítok", name: "tag", widget: "string" }
+              - { label: "URL obrázka", name: "img", widget: "string" }
+          - label: "Prílohy"
+            name: "prilohy"
+            widget: "list"
+            fields:
+              - { label: "Názov", name: "name", widget: "string" }
+              - { label: "Popis", name: "desc", widget: "string" }
+              - { label: "Cena", name: "price", widget: "string" }
+              - { label: "Štítok", name: "tag", widget: "string" }
+              - { label: "URL obrázka", name: "img", widget: "string" }
+          - label: "Dezerty & Nápoje"
+            name: "dezerty"
+            widget: "list"
+            fields:
+              - { label: "Názov", name: "name", widget: "string" }
+              - { label: "Popis", name: "desc", widget: "string" }
+              - { label: "Cena", name: "price", widget: "string" }
+              - { label: "Štítok", name: "tag", widget: "string" }
+              - { label: "URL obrázka", name: "img", widget: "string" }
+
+  - name: "daily"
+    label: "Denné menu"
+    files:
+      - label: "Denné menu tento týždeň"
+        name: "daily_menu"
+        file: "content/daily-menu.json"
+        fields:
+          - { label: "Začiatok týždňa", name: "week_start", widget: "date", format: "YYYY-MM-DD" }
+          - label: "Pondelok"
+            name: "monday"
+            widget: "object"
+            fields:
+              - { label: "Polievka", name: "soup", widget: "string" }
+              - { label: "Hlavné jedlo", name: "main", widget: "string" }
+              - { label: "Cena (napr. €5.50)", name: "price", widget: "string" }
+          - label: "Utorok"
+            name: "tuesday"
+            widget: "object"
+            fields:
+              - { label: "Polievka", name: "soup", widget: "string" }
+              - { label: "Hlavné jedlo", name: "main", widget: "string" }
+              - { label: "Cena", name: "price", widget: "string" }
+          - label: "Streda"
+            name: "wednesday"
+            widget: "object"
+            fields:
+              - { label: "Polievka", name: "soup", widget: "string" }
+              - { label: "Hlavné jedlo", name: "main", widget: "string" }
+              - { label: "Cena", name: "price", widget: "string" }
+          - label: "Štvrtok"
+            name: "thursday"
+            widget: "object"
+            fields:
+              - { label: "Polievka", name: "soup", widget: "string" }
+              - { label: "Hlavné jedlo", name: "main", widget: "string" }
+              - { label: "Cena", name: "price", widget: "string" }
+          - label: "Piatok"
+            name: "friday"
+            widget: "object"
+            fields:
+              - { label: "Polievka", name: "soup", widget: "string" }
+              - { label: "Hlavné jedlo", name: "main", widget: "string" }
+              - { label: "Cena", name: "price", widget: "string" }
