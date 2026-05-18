@@ -87,11 +87,12 @@ function renderMenu(cat) {
   grid.innerHTML = '';
   if (menuFade) menuFade.classList.add('hidden');
 
-  const items = menuData[currentMode][cat] || [];
+  let items = menuData[currentMode][cat] || [];
   if (items.length === 0) {
     grid.innerHTML = '<p class="menu__empty">Táto kategória nie je dostupná pre rozvoz.</p>';
     return;
   }
+  if (menuFade && cat === 'pizza') items = items.slice(0, 8);
   items.forEach(item => {
     const card = document.createElement('div');
     card.className = 'menu-card reveal';
