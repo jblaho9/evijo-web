@@ -1,8 +1,28 @@
 {
   "week_start": "2026-05-18",
-  "monday":    { "soup": "Hovädzí vývar s rezancami", "main": "Kurací steak s grilovanou zeleninou",       "price": "€5.50" },
-  "tuesday":   { "soup": "Cesnaková polievka so syrom", "main": "Bravčový kotlet na šampiňónovej omáčke", "price": "€5.80" },
-  "wednesday": { "soup": "Paradajková polievka",        "main": "Spaghetti Bolognese",                     "price": "€5.50" },
-  "thursday":  { "soup": "Špenátová polievka s vajcom", "main": "Rizoto s hubami a parmezánom",            "price": "€5.50" },
-  "friday":    { "soup": "Minestrone",                  "main": "Zapekané zemiaky so syrom a slaninou",    "price": "€5.20" }
+  "monday": {
+    "soup": "Hovädzí vývar s rezancami alebo meooollln",
+    "main": "Kurací steak s grilovanou zeleninou",
+    "price": "8.9"
+  },
+  "tuesday": {
+    "soup": "Cesnaková polievka so syrom",
+    "main": "Bravčový kotlet na šampiňónovej omáčke",
+    "price": "€5.80"
+  },
+  "wednesday": {
+    "soup": "Paradajková polievka",
+    "main": "Spaghetti Bolognese",
+    "price": "€5.50"
+  },
+  "thursday": {
+    "soup": "Špenátová polievka s vajcom",
+    "main": "Rizoto s hubami a parmezánom",
+    "price": "€5.50"
+  },
+  "friday": {
+    "soup": "Minestrone",
+    "main": "Zapekané zemiaky so syrom a slaninou",
+    "price": "€5.20"
+  }
 }
