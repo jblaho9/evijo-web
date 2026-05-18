@@ -1,0 +1,51 @@
+{
+  "pizza": [
+    { "name": "Margherita",       "desc": "Paradajková omáčka, mozzarella, bazalka",                       "price": "€6.50",  "tag": "Klasika",   "img": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=500&q=80" },
+    { "name": "Quattro Formaggi", "desc": "Mozzarella, gorgonzola, parmezán, eidam",                       "price": "€8.90",  "tag": "Obľúbená",  "img": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500&q=80" },
+    { "name": "Diavola",          "desc": "Paradajková omáčka, pikantná saláma, chilli, olivy",            "price": "€7.80",  "tag": "Pikantná",  "img": "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500&q=80" },
+    { "name": "Prosciutto",       "desc": "Šunka prosciutto, rukola, cherry paradajky, parmezán",          "price": "€9.50",  "tag": "Premium",   "img": "https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?w=500&q=80" },
+    { "name": "Hawai",            "desc": "Šunka, ananás, mozzarella",                                     "price": "€7.80",  "tag": "Sladká",    "img": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500&q=80" },
+    { "name": "Špenátová",        "desc": "Špenát, mozzarella, cesnak, syr feta",                          "price": "€8.50",  "tag": "Vegán",     "img": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=500&q=80" },
+    { "name": "BBQ Kurča",        "desc": "BBQ omáčka, kuracie mäso, červená cibuľa, mozzarella",         "price": "€9.20",  "tag": "Gril",      "img": "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500&q=80" },
+    { "name": "Funghi",           "desc": "Šampiňóny, mozzarella, cesnak, oregano",                       "price": "€7.50",  "tag": "Vegán",     "img": "https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?w=500&q=80" },
+    { "name": "Salami",           "desc": "Saláma, mozzarella, paradajková omáčka",                       "price": "€7.20",  "tag": "Klasika",   "img": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=500&q=80" },
+    { "name": "Capricciosa",      "desc": "Šunka, artičoky, šampiňóny, olivy, mozzarella",               "price": "€8.80",  "tag": "Obľúbená",  "img": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500&q=80" },
+    { "name": "Tonno",            "desc": "Tuniak, červená cibuľa, kapary, mozzarella",                   "price": "€9.00",  "tag": "More",      "img": "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500&q=80" },
+    { "name": "Vegetariana",      "desc": "Grilovaná zelenina, mozzarella, paradajková omáčka",           "price": "€8.00",  "tag": "Vegán",     "img": "https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?w=500&q=80" },
+    { "name": "Pepperoni",        "desc": "Pepperoni, mozzarella, jalapeños",                             "price": "€8.50",  "tag": "Pikantná",  "img": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=500&q=80" },
+    { "name": "Bianca",           "desc": "Biela omáčka, mozzarella, cesnak, rozmarín",                   "price": "€7.80",  "tag": "Biela",     "img": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500&q=80" },
+    { "name": "Mexicana",         "desc": "Mleté mäso, fazuľa, jalapeños, mozzarella",                   "price": "€9.00",  "tag": "Pikantná",  "img": "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500&q=80" },
+    { "name": "Pollo e Pesto",    "desc": "Kuracie mäso, pesto, cherry paradajky, mozzarella",           "price": "€9.80",  "tag": "Gril",      "img": "https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?w=500&q=80" },
+    { "name": "Patata",           "desc": "Zemiaky, rozmarín, slanina, mozzarella",                      "price": "€8.80",  "tag": "Domáca",    "img": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=500&q=80" },
+    { "name": "Calabrese",        "desc": "Chorizo, červená paprika, mozzarella, chilli olej",           "price": "€9.50",  "tag": "Pikantná",  "img": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500&q=80" },
+    { "name": "Evijo špeciál",    "desc": "Tajný recept šéfkuchára",                                    "price": "€11.50", "tag": "Šéfkuchár", "img": "https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?w=500&q=80" }
+  ],
+  "cestoviny": [
+    { "name": "Spaghetti Bolognese", "desc": "Hovädzí ragú so zeleninou, parmezán",          "price": "€7.50", "tag": "Klasika",  "img": "https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb?w=500&q=80" },
+    { "name": "Carbonara",           "desc": "Pancetta, vajce, parmezán, čierne korenie",    "price": "€8.00", "tag": "Obľúbená", "img": "https://images.unsplash.com/photo-1612874742237-6526221588e3?w=500&q=80" },
+    { "name": "Penne Arrabbiata",    "desc": "Pikantná paradajková omáčka, cesnak, bazalka", "price": "€6.80", "tag": "Vegán",    "img": "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=500&q=80" }
+  ],
+  "hlavne": [
+    { "name": "Kurací steak",    "desc": "Marinované kuracie prsia, grilovaná zelenina", "price": "€9.90",  "tag": "Gril",   "img": "https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=500&q=80" },
+    { "name": "Bravčový kotlet", "desc": "Kotlet na šampiňónovej omáčke, ryža",          "price": "€11.20", "tag": "Domáce", "img": "https://images.unsplash.com/photo-1594221708779-94832f4320d1?w=500&q=80" }
+  ],
+  "salaty": [
+    { "name": "Caesar šalát", "desc": "Rímsky šalát, krutóny, parmezán, Caesar dressing", "price": "€7.00", "tag": "Klasika", "img": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500&q=80" },
+    { "name": "Grécky šalát", "desc": "Uhorka, olivy, feta, červená cibuľa, paprika",     "price": "€6.80", "tag": "Vegán",   "img": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=500&q=80" }
+  ],
+  "polievky": [
+    { "name": "Polievka dňa",        "desc": "Čerstvá polievka podľa dennej ponuky",        "price": "€2.00", "tag": "Denná",  "img": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=500&q=80" },
+    { "name": "Hovädzí vývar",        "desc": "Tradičný vývar s rezancami a zeleninou",      "price": "€2.50", "tag": "Klasika","img": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=500&q=80" },
+    { "name": "Paradajková polievka", "desc": "Krémová paradajková polievka, bazalka",       "price": "€2.50", "tag": "Vegán",  "img": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=500&q=80" },
+    { "name": "Cesnaková polievka",   "desc": "Cesnaková polievka so syrom a krutónmi",      "price": "€2.50", "tag": "Domáca", "img": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=500&q=80" },
+    { "name": "Fazuľová polievka",    "desc": "Hustá fazuľová polievka so slaninou",         "price": "€2.80", "tag": "Domáca", "img": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=500&q=80" }
+  ],
+  "prilohy": [
+    { "name": "Hranolky",       "desc": "Chrumkavé hranolky",          "price": "€2.80", "tag": "Príloha", "img": "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=500&q=80" },
+    { "name": "Pečené zemiaky", "desc": "Zemiaky pečené s rozmarínom", "price": "€2.80", "tag": "Príloha", "img": "https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=500&q=80" }
+  ],
+  "dezerty": [
+    { "name": "Tiramisu",    "desc": "Klasické talianske tiramisu s mascarpone", "price": "€4.80", "tag": "Talianske", "img": "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=500&q=80" },
+    { "name": "Kofola 0.5L", "desc": "Kofola točená v nádobe",                  "price": "€2.20", "tag": "Nápoj",     "img": "https://images.unsplash.com/photo-1554866585-cd94860890b7?w=500&q=80" }
+  ]
+}
