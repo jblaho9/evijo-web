@@ -530,7 +530,7 @@ img { display: block; max-width: 100%; }
   padding: 14px 36px;
   font-weight: 600;
   letter-spacing: .04em;
-  border: 1.5px solid rgba(150,160,150,.45);
+  border: 2px solid var(--green);
   backdrop-filter: blur(6px);
   box-shadow: 0 4px 16px rgba(0,0,0,.1);
   transition: transform .2s, box-shadow .2s, background .2s, color .2s, border-color .2s;
