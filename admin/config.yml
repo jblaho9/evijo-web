@@ -23,7 +23,7 @@ collections:
               - { label: "Popis ingrediencií", name: "desc", widget: "string" }
               - { label: "Cena (napr. €7.50)", name: "price", widget: "string" }
               - { label: "Štítok (napr. Klasika)", name: "tag", widget: "string" }
-              - { label: "URL obrázka", name: "img", widget: "string" }
+              - { label: "Obrázok", name: "img", widget: "image" }
           - label: "Cestoviny & Rizotá"
             name: "cestoviny"
             widget: "list"
@@ -32,7 +32,7 @@ collections:
               - { label: "Popis", name: "desc", widget: "string" }
               - { label: "Cena", name: "price", widget: "string" }
               - { label: "Štítok", name: "tag", widget: "string" }
-              - { label: "URL obrázka", name: "img", widget: "string" }
+              - { label: "Obrázok", name: "img", widget: "image" }
           - label: "Hlavné jedlá"
             name: "hlavne"
             widget: "list"
@@ -41,7 +41,7 @@ collections:
               - { label: "Popis", name: "desc", widget: "string" }
               - { label: "Cena", name: "price", widget: "string" }
               - { label: "Štítok", name: "tag", widget: "string" }
-              - { label: "URL obrázka", name: "img", widget: "string" }
+              - { label: "Obrázok", name: "img", widget: "image" }
           - label: "Šaláty"
             name: "salaty"
             widget: "list"
@@ -50,7 +50,7 @@ collections:
               - { label: "Popis", name: "desc", widget: "string" }
               - { label: "Cena", name: "price", widget: "string" }
               - { label: "Štítok", name: "tag", widget: "string" }
-              - { label: "URL obrázka", name: "img", widget: "string" }
+              - { label: "Obrázok", name: "img", widget: "image" }
           - label: "Polievky"
             name: "polievky"
             widget: "list"
@@ -59,7 +59,7 @@ collections:
               - { label: "Popis", name: "desc", widget: "string" }
               - { label: "Cena", name: "price", widget: "string" }
               - { label: "Štítok", name: "tag", widget: "string" }
-              - { label: "URL obrázka", name: "img", widget: "string" }
+              - { label: "Obrázok", name: "img", widget: "image" }
           - label: "Prílohy"
             name: "prilohy"
             widget: "list"
@@ -68,7 +68,7 @@ collections:
               - { label: "Popis", name: "desc", widget: "string" }
               - { label: "Cena", name: "price", widget: "string" }
               - { label: "Štítok", name: "tag", widget: "string" }
-              - { label: "URL obrázka", name: "img", widget: "string" }
+              - { label: "Obrázok", name: "img", widget: "image" }
           - label: "Dezerty & Nápoje"
             name: "dezerty"
             widget: "list"
@@ -77,7 +77,7 @@ collections:
               - { label: "Popis", name: "desc", widget: "string" }
               - { label: "Cena", name: "price", widget: "string" }
               - { label: "Štítok", name: "tag", widget: "string" }
-              - { label: "URL obrázka", name: "img", widget: "string" }
+              - { label: "Obrázok", name: "img", widget: "image" }
 
       - label: "Rozvoz – celé menu"
         name: "delivery"
@@ -91,7 +91,7 @@ collections:
               - { label: "Popis", name: "desc", widget: "string" }
               - { label: "Cena", name: "price", widget: "string" }
               - { label: "Štítok", name: "tag", widget: "string" }
-              - { label: "URL obrázka", name: "img", widget: "string" }
+              - { label: "Obrázok", name: "img", widget: "image" }
           - label: "Cestoviny & Rizotá"
             name: "cestoviny"
             widget: "list"
@@ -100,7 +100,7 @@ collections:
               - { label: "Popis", name: "desc", widget: "string" }
               - { label: "Cena", name: "price", widget: "string" }
               - { label: "Štítok", name: "tag", widget: "string" }
-              - { label: "URL obrázka", name: "img", widget: "string" }
+              - { label: "Obrázok", name: "img", widget: "image" }
           - label: "Hlavné jedlá"
             name: "hlavne"
             widget: "list"
@@ -109,7 +109,7 @@ collections:
               - { label: "Popis", name: "desc", widget: "string" }
               - { label: "Cena", name: "price", widget: "string" }
               - { label: "Štítok", name: "tag", widget: "string" }
-              - { label: "URL obrázka", name: "img", widget: "string" }
+              - { label: "Obrázok", name: "img", widget: "image" }
           - label: "Šaláty"
             name: "salaty"
             widget: "list"
@@ -118,7 +118,7 @@ collections:
               - { label: "Popis", name: "desc", widget: "string" }
               - { label: "Cena", name: "price", widget: "string" }
               - { label: "Štítok", name: "tag", widget: "string" }
-              - { label: "URL obrázka", name: "img", widget: "string" }
+              - { label: "Obrázok", name: "img", widget: "image" }
           - label: "Polievky"
             name: "polievky"
             widget: "list"
@@ -127,7 +127,7 @@ collections:
               - { label: "Popis", name: "desc", widget: "string" }
               - { label: "Cena", name: "price", widget: "string" }
               - { label: "Štítok", name: "tag", widget: "string" }
-              - { label: "URL obrázka", name: "img", widget: "string" }
+              - { label: "Obrázok", name: "img", widget: "image" }
           - label: "Prílohy"
             name: "prilohy"
             widget: "list"
@@ -136,7 +136,7 @@ collections:
               - { label: "Popis", name: "desc", widget: "string" }
               - { label: "Cena", name: "price", widget: "string" }
               - { label: "Štítok", name: "tag", widget: "string" }
-              - { label: "URL obrázka", name: "img", widget: "string" }
+              - { label: "Obrázok", name: "img", widget: "image" }
           - label: "Dezerty & Nápoje"
             name: "dezerty"
             widget: "list"
@@ -145,7 +145,7 @@ collections:
               - { label: "Popis", name: "desc", widget: "string" }
               - { label: "Cena", name: "price", widget: "string" }
               - { label: "Štítok", name: "tag", widget: "string" }
-              - { label: "URL obrázka", name: "img", widget: "string" }
+              - { label: "Obrázok", name: "img", widget: "image" }
 
   - name: "daily"
     label: "Denné menu"

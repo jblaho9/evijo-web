@@ -130,12 +130,17 @@
     let menuData = { restaurant: {}, delivery: {} };
 
     async function loadMenuData() {
-      const [restaurant, delivery] = await Promise.all([
-        fetch('/content/menu/restaurant.json').then(r => r.json()),
-        fetch('/content/menu/delivery.json').then(r => r.json()),
-      ]);
-      menuData.restaurant = restaurant;
-      menuData.delivery = delivery;
+      try {
+        const [restaurant, delivery] = await Promise.all([
+          fetch('/content/menu/restaurant.json').then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }),
+          fetch('/content/menu/delivery.json').then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }),
+        ]);
+        menuData.restaurant = restaurant;
+        menuData.delivery = delivery;
+      } catch (e) {
+        const grid = document.getElementById('menuGrid');
+        if (grid) grid.innerHTML = '<p class="menu__empty">Menu sa nepodarilo načítať. Skúste obnoviť stránku.</p>';
+      }
     }
 
     // ===== STATE =====
@@ -151,6 +156,7 @@
 
     // ===== RENDER =====
     function renderMenu(cat) {
+      if (!Object.keys(menuData.restaurant).length) return;
       const grid  = document.getElementById('menuGrid');
       const items = menuData[currentMode][cat] || [];
       grid.innerHTML = '';

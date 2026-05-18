@@ -28,16 +28,30 @@ navLinks.querySelectorAll('a').forEach(a => {
 let menuData = { restaurant: {}, delivery: {} };
 
 async function loadMenuData() {
-  const [restaurant, delivery] = await Promise.all([
-    fetch('/content/menu/restaurant.json').then(r => r.json()),
-    fetch('/content/menu/delivery.json').then(r => r.json()),
-  ]);
-  menuData.restaurant = restaurant;
-  menuData.delivery = delivery;
+  try {
+    const [restaurant, delivery] = await Promise.all([
+      fetch('/content/menu/restaurant.json').then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }),
+      fetch('/content/menu/delivery.json').then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }),
+    ]);
+    menuData.restaurant = restaurant;
+    menuData.delivery = delivery;
+  } catch (e) {
+    const grid = document.getElementById('menuGrid');
+    if (grid) grid.innerHTML = '<p class="menu__empty">Menu sa nepodarilo načítať. Skúste obnoviť stránku.</p>';
+  }
 }
 
 async function loadDailyMenu() {
-  const data = await fetch('/content/daily-menu.json').then(r => r.json());
+  let data;
+  try {
+    const r = await fetch('/content/daily-menu.json');
+    if (!r.ok) throw new Error(r.status);
+    data = await r.json();
+  } catch (e) {
+    const grid = document.getElementById('dailyGrid');
+    if (grid) grid.innerHTML = '<p style="color:rgba(255,255,255,.7);padding:20px 0">Denné menu momentálne nie je k dispozícii.</p>';
+    return;
+  }
   const grid = document.getElementById('dailyGrid');
   if (!grid) return;
 
@@ -67,6 +81,7 @@ let currentMode = 'restaurant';
 let currentCat = 'pizza';
 
 function renderMenu(cat) {
+  if (!Object.keys(menuData.restaurant).length) return;
   const grid = document.getElementById('menuGrid');
   const menuFade = document.getElementById('menuFade');
   grid.innerHTML = '';
