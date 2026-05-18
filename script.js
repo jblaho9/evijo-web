@@ -36,6 +36,33 @@ async function loadMenuData() {
   menuData.delivery = delivery;
 }
 
+async function loadDailyMenu() {
+  const data = await fetch('/content/daily-menu.json').then(r => r.json());
+  const grid = document.getElementById('dailyGrid');
+  if (!grid) return;
+
+  const dayLabels = {
+    monday: 'Pondelok', tuesday: 'Utorok', wednesday: 'Streda',
+    thursday: 'Štvrtok', friday: 'Piatok'
+  };
+  const todayKey = ['sunday','monday','tuesday','wednesday','thursday','friday','saturday'][new Date().getDay()];
+
+  grid.innerHTML = Object.entries(dayLabels).map(([key, label]) => {
+    const day = data[key];
+    if (!day) return '';
+    const isToday = key === todayKey;
+    return `
+      <div class="daily-card${isToday ? ' daily-card--today' : ''}">
+        ${isToday ? '<span class="daily-card__badge">Dnes</span>' : ''}
+        <div class="daily-card__day">${label}</div>
+        <div class="daily-card__soup"><span>🍲</span> ${day.soup}</div>
+        <div class="daily-card__main"><span>🍽️</span> ${day.main}</div>
+        <div class="daily-card__price">${day.price}</div>
+      </div>
+    `;
+  }).join('');
+}
+
 let currentMode = 'restaurant';
 let currentCat = 'pizza';
 
@@ -100,6 +127,7 @@ document.getElementById('menuTabs').addEventListener('click', e => {
 });
 
 loadMenuData().then(() => renderMenu(currentCat));
+loadDailyMenu();
 
 // ===== SCROLL SPY =====
 const spySections = ['home', 'delivery', 'menu', 'daily', 'about', 'contact'];
